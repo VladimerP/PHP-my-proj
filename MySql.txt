@@ -1,0 +1,22 @@
+CREATE DATABASE bd_inf;
+
+USE bd_inf;
+
+CREATE TABLE Information
+(
+  idPeople INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Login varchar(30),	
+  Mail varchar(30)
+);
+
+CREATE TABLE Changes
+(
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  idPeople INT,
+  timeData DATETIME,
+  Ip varchar(20),
+  fiel  varchar(15),
+  Login varchar(30),	
+  Mail varchar(30),
+  FOREIGN KEY (idPeople) REFERENCES customers(idPeople)
+);
